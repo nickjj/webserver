@@ -8,7 +8,7 @@ from http.server import HTTPServer, BaseHTTPRequestHandler
 from sys import argv
 
 BIND_HOST = 'localhost'
-PORT = 8000
+PORT = 8008
 
 
 class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):

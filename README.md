@@ -40,7 +40,7 @@ from the master branch.
 
 You can start the server by running `webserver`.
 
-That will listen on `http://localhost:8000` by default. You can customize the
+That will listen on `http://localhost:8008` by default. You can customize the
 bind address and port by running it with `webserver 0.0.0.0:5000`.
 
 You can hit `CTRL+C` to stop the server.
@@ -52,24 +52,24 @@ fit.
 
 ```sh
 # Send a GET request with a query string.
-curl localhost:8000/?just=testing
+curl localhost:8008/?just=testing
 
 # Response (empty body):
 127.0.0.1 - - [09/Sep/2020 14:23:24] "GET /?just=testing HTTP/1.1" 200 -
-Host: localhost:8000
+Host: localhost:8008
 User-Agent: curl/7.68.0
 Accept: */*
 ```
 
 ```sh
 # Send a POST request with inline JSON data.
-curl localhost:8000/ \
+curl localhost:8008/ \
   -H "Content-Type: application/json" \
   -X POST --data '{"foo":"bar"}'
 
 # Response:
 127.0.0.1 - - [09/Sep/2020 14:09:33] "POST / HTTP/1.1" 200 -
-Host: localhost:8000
+Host: localhost:8008
 User-Agent: curl/7.68.0
 Accept: */*
 Content-Type: application/json
@@ -83,13 +83,13 @@ Content-Length: 13
 # Send a POST request with file based JSON data.
 echo '{"hello":"world"}' > test.json
 
-curl localhost:8000/ \
+curl localhost:8008/ \
   -H "Content-Type: application/json" \
   -X POST --data @test.json
 
 # Response:
 127.0.0.1 - - [09/Sep/2020 14:10:06] "POST / HTTP/1.1" 200 -
-Host: localhost:8000
+Host: localhost:8008
 User-Agent: curl/7.68.0
 Accept: */*
 Content-Type: application/json
@@ -101,13 +101,13 @@ Content-Length: 17
 
 ```sh
 # Send a POST request with form data.
-curl localhost:8000/ \
+curl localhost:8008/ \
   -H "Content-Type: application/x-www-form-urlencoded" \
   -X POST --data "foo=bar"
 
 # Response:
 127.0.0.1 - - [09/Sep/2020 14:10:36] "POST / HTTP/1.1" 200 -
-Host: localhost:8000
+Host: localhost:8008
 User-Agent: curl/7.68.0
 Accept: */*
 Content-Type: application/x-www-form-urlencoded
@@ -129,7 +129,7 @@ Sure. There's lots of tools you can use. One of them that's free is
 [ngrok](https://ngrok.com/). No port forwarding needed!
 
 After installing ngrok you can start your `webserver` and then run `ngrok http
-8000`. A few seconds later you'll have a publicly accessible HTTPS version of
+8008`. A few seconds later you'll have a publicly accessible HTTPS version of
 this local server that you can access over the internet.
 
 Keep in mind that's only practical for end to end tests, not a real production
@@ -138,7 +138,7 @@ environment.
 The above could be handy if you had a test server on the cloud that you've
 deployed your web app to and you wanted it to send a webhook response to your
 local `webserver`. You could configure your deployed web app to send the
-webhook to the ngrok address instead of `localhost:8000`.
+webhook to the ngrok address instead of `localhost:8008`.
 
 Keep in mind if you're only dealing with local development you don't need to
 use ngrok at all.
