@@ -1,0 +1,20 @@
+name: "CI"
+
+on: "push"
+
+jobs:
+  test:
+    runs-on: "ubuntu-latest"
+
+    steps:
+      - uses: "actions/checkout@v2"
+
+      - name: "Set up Python 3.7"
+        uses: "actions/setup-python@v1"
+        with:
+          python-version: "3.7"
+
+      - name: "Lint extension"
+        run: |
+          pip install flake8
+          flake8 . --ignore=E501
