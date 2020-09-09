@@ -1,7 +1,7 @@
 # webserver ![CI](https://github.com/nickjj/webserver/workflows/CI/badge.svg?branch=master)
 
-A zero dependency Python 3 command line script to echo back an HTTP request's
-headers and data.
+A zero dependency Python 3 web server to echo back an HTTP request's headers
+and data.
 
 - [Why?](#why)
 - [Installation](#installation)
