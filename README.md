@@ -41,7 +41,8 @@ from the master branch.
 You can start the server by running `webserver`.
 
 That will listen on `http://localhost:8008` by default. You can customize the
-bind address and port by running it with `webserver 0.0.0.0:5000`.
+bind address and port by running it with `webserver 0.0.0.0:5000` or any 
+`host:port` you want.
 
 You can hit `CTRL+C` to stop the server.
 
