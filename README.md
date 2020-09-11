@@ -7,6 +7,7 @@ and data.
 - [Installation](#installation)
 - [Usage](#usage)
 - [FAQ](#faq)
+  - [What if your web app is running in Docker?](#what-if-your-web-app-is-running-in-docker)
   - [What about exposing this server to the internet?](#what-about-exposing-this-server-to-the-internet)
 - [About the Author](#about-the-author)
 
@@ -123,6 +124,30 @@ library](https://github.com/psf/requests) to send requests instead of curl.  Or
 feel free to use whatever HTTP client your programming language has available.
 
 ## FAQ
+
+###  What if your web app is running in Docker?
+
+Without Docker, your web app might be running on `localhost:8000` and then
+this `webserver` might be running on `localhost:8008`, and then you can
+instruct your web app to send requests to `localhost:8008`. That's easy.
+
+With Docker, things are slightly different. Your app web might still be running
+on `localhost:8000` but you'll want to bind the `webserver` to `0.0.0.0:8008`
+instead of `localhost:8008`. This will allow anyone on your network to connect.
+
+Then from within your Dockerized web app you'll want to send requests to
+`host.docker.internal` if you're using Docker Desktop. This will let your
+container connect to a service running on your local dev box outsider of
+Docker. On native Linux you can use your dev box's local network IP address
+instead.
+
+Alternatively you can run `webserver` as a service within your Docker Compose
+set up. Then you could connect to it as if you would connect to any container,
+such as using its service name from what's defined in `docker-compose.yml`.
+
+Since this application has no dependencies and Python is installed by default
+pretty much everywhere I would recommend running `webserver` outside of Docker,
+but feel free to do what you think is best for your work flow.
 
 ### What about exposing this server to the internet?
 
