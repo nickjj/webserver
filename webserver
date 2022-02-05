@@ -6,6 +6,7 @@
 
 from http.server import HTTPServer, BaseHTTPRequestHandler
 from sys import argv
+import json
 
 BIND_HOST = 'localhost'
 PORT = 8008
@@ -27,7 +28,7 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
         self.wfile.write(content)
 
         print(self.headers)
-        print(content.decode('utf-8'))
+        print(json.dumps(json.loads(content.decode('utf-8')), indent=3))
 
 
 if len(argv) > 1:
