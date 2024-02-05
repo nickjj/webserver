@@ -2,7 +2,7 @@
 
 ## v0.3.0
 
-*Released: February 5th 2023*
+*Released: February 5th 2024*
 
 - Add `nickjj/webserver` Docker image for easier integrations with Docker Compose
 
