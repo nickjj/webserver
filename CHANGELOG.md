@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.3.2
+
+*Released: February 5th 2024*
+
+- Fix GitHub Action for pushing Docker image tags
+
 ## v0.3.1
 
 *Released: February 5th 2024*
