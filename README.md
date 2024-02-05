@@ -29,7 +29,7 @@ and place it somewhere on your system path.
 
 ```sh
 sudo curl \
-  -L https://raw.githubusercontent.com/nickjj/webserver/v0.2.0/webserver \
+  -L https://raw.githubusercontent.com/nickjj/webserver/v0.3.0/webserver \
   -o /usr/local/bin/webserver && sudo chmod +x /usr/local/bin/webserver
 ```
 
@@ -37,13 +37,25 @@ That will download the latest release. If you want to download the bleeding
 edge version you can replace the version number with master to download it
 from the master branch.
 
+#### Alternatively it's available in a Docker image:
+
+This could be useful if you want this process to run on the same network as
+your other Docker containers.
+
+```sh
+docker container run -it -p 127.0.0.1:8008:8008 webserver:0.3.0
+```
+
+If you go this route, you can run the above command instead of `webserver` when
+following the docs below.
+
 ## Usage
 
 You can start the server by running `webserver`.
 
-That will listen on `http://localhost:8008` by default. You can customize the
-bind address and port by running it with `webserver 0.0.0.0:5000` or any 
-`host:port` you want.
+If you're not using Docker, that will listen on `http://localhost:8008` by
+default. You can customize the bind address and port by running it with
+`webserver 0.0.0.0:5000` or any `host:port` you want.
 
 You can hit `CTRL+C` to stop the server.
 
@@ -127,27 +139,40 @@ feel free to use whatever HTTP client your programming language has available.
 
 ###  What if your web app is running in Docker?
 
-Without Docker, your web app might be running on `localhost:8000` and then
-this `webserver` might be running on `localhost:8008`, and then you can
-instruct your web app to send requests to `localhost:8008`. That's easy.
+You have a few options.
 
-With Docker, things are slightly different. Your app web might still be running
-on `localhost:8000` but you'll want to bind the `webserver` to `0.0.0.0:8008`
-instead of `localhost:8008`. This will allow anyone on your network to connect.
+#### Running the standalone `webserver` script without Docker?
 
-Then from within your Dockerized web app you'll want to send requests to
-`host.docker.internal` if you're using Docker Desktop. This will let your
-container connect to a service running on your local dev box outsider of
-Docker. On native Linux you can use your dev box's local network IP address
-instead.
+You can run `webserver 0.0.0.0:8008` and from within your container you can
+access it through `host.docker.internal:8008` as long as you're using Docker
+Desktop.
 
-Alternatively you can run `webserver` as a service within your Docker Compose
-set up. Then you could connect to it as if you would connect to any container,
-such as using its service name from what's defined in `docker-compose.yml`.
+If you're on native Linux without DD you can add this flag
+`--add-host=host.docker.internal:host-gateway` to your container's Docker
+command or if you're using Docker Compose you can add this property to your
+app's service `extra_hosts: ["host.docker.internal:host-gateway"]`. Now
+`host.docker.internal` will work.
 
-Since this application has no dependencies and Python is installed by default
-pretty much everywhere I would recommend running `webserver` outside of Docker,
-but feel free to do what you think is best for your work flow.
+#### Running `webserver` with Docker?
+
+If everything is running in Docker Compose you can do:
+
+```yml
+services:
+  myapp:
+    # ...
+
+  webserver:
+    image: "nickjj/webserver:0.3.0"
+```
+
+From within your `myapp` container you'll be able to connect to
+`webserver:8008`. Basically you can access it over your container's network
+like usual, the same goes without using Docker Compose.
+
+You can optionally add `ports: ["127.0.0.1:8008:8008"]` if you want to access
+the webserver locally on your Docker host with `curl http://localhost:8008`. In
+this case we're publishing the port back to your host.
 
 ### What about exposing this server to the internet?
 

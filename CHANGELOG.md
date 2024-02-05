@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.3.0
+
+*Released: February 5th 2023*
+
+- Add `nickjj/webserver` Docker image for easier integrations with Docker Compose
+
 ## v0.2.0
 
 *Released: September 9th 2020*
