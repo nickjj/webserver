@@ -43,7 +43,7 @@ This could be useful if you want this process to run on the same network as
 your other Docker containers.
 
 ```sh
-docker container run -it -p 127.0.0.1:8008:8008 webserver:0.3.0
+docker container run -it -p 127.0.0.1:8008:8008 nickjj/webserver:0.3.0
 ```
 
 If you go this route, you can run the above command instead of `webserver` when
