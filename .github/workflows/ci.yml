@@ -7,14 +7,16 @@ jobs:
     runs-on: "ubuntu-latest"
 
     steps:
-      - uses: "actions/checkout@v2"
+      - name: "Checkout"
+        uses: "actions/checkout@v4"
 
-      - name: "Set up Python 3.7"
-        uses: "actions/setup-python@v1"
+      - name: "Set up Python 3.11"
+        uses: "actions/setup-python@v5"
         with:
-          python-version: "3.7"
+          python-version: "3.11"
 
       - name: "Lint extension"
         run: |
-          pip install flake8
-          flake8 . --ignore=E501
+          pip install black flake8
+          black webserver
+          flake8 webserver
