@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.3.1
+
+*Released: February 5th 2024*
+
+- Add GitHub Action for pushing images on new tags
+
 ## v0.3.0
 
 *Released: February 5th 2024*
