@@ -1,5 +1,17 @@
 # Changelog
 
+## v0.3.4
+
+*Released: February 5th 2024*
+
+- Change Docker image tag format to include `v` prefix
+
+## v0.3.3
+
+*Released: February 5th 2024*
+
+- Attempting to debug GitHub Actions
+
 ## v0.3.2
 
 *Released: February 5th 2024*
