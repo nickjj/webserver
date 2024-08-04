@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.3.5
+
+*Released: August 4th 2024*
+
+- Update base image to use Python 3.12.4
+
 ## v0.3.4
 
 *Released: February 5th 2024*
