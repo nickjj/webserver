@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.3.7
+
+*Released: August 8th 2024*
+
+- Enable SBOM attestations on Docker builds
+
 ## v0.3.6
 
 *Released: August 8th 2024*

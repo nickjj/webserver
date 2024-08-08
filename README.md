@@ -31,7 +31,7 @@ and place it somewhere on your system path.
 
 ```sh
 sudo curl \
-  -L https://raw.githubusercontent.com/nickjj/webserver/v0.3.6/webserver \
+  -L https://raw.githubusercontent.com/nickjj/webserver/v0.3.7/webserver \
   -o /usr/local/bin/webserver && sudo chmod +x /usr/local/bin/webserver
 ```
 
