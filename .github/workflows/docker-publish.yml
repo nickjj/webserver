@@ -30,6 +30,7 @@ jobs:
         with:
           context: "."
           platforms: "linux/amd64,linux/arm64"
+          sbom: true
           push: true
           tags: |
             "${{ github.repository }}:latest"
