@@ -31,7 +31,7 @@ and place it somewhere on your system path.
 
 ```sh
 sudo curl \
-  -L https://raw.githubusercontent.com/nickjj/webserver/v0.3.4/webserver \
+  -L https://raw.githubusercontent.com/nickjj/webserver/v0.3.6/webserver \
   -o /usr/local/bin/webserver && sudo chmod +x /usr/local/bin/webserver
 ```
 
@@ -64,7 +64,7 @@ You can hit `CTRL+C` to stop the server.
 ### Testing it out with curl
 
 With your `webserver` running, now you can send requests to it however you see
-fit. 
+fit.
 
 ```sh
 # Send a GET request with a query string.
