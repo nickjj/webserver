@@ -21,6 +21,15 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
 
         self.write_response(body)
 
+
+    def do_PUT(self):
+
+        content_length = int(self.headers.get("content-length", 0))
+        body = self.rfile.read(content_length)
+
+        self.write_response(body)
+
+
     def write_response(self, content):
         self.send_response(200)
         self.end_headers()
