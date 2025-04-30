@@ -23,7 +23,6 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
 
 
     def do_PUT(self):
-
         content_length = int(self.headers.get("content-length", 0))
         body = self.rfile.read(content_length)
 
