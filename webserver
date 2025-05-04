@@ -14,11 +14,9 @@ PORT = 8008
 class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
     def do_GET(self):
         self.write_response(b"")
-        
 
     def do_HEAD(self):
         self.write_response(b"")
-
 
     def handle_request_with_body(self):
         content_length = int(self.headers.get("content-length", 0))
@@ -26,22 +24,17 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
 
         self.write_response(body)
 
-
     def do_POST(self):
         self.handle_request_with_body()
-
 
     def do_PUT(self):
         self.handle_request_with_body()
 
-
     def do_PATCH(self):
         self.handle_request_with_body()
-    
 
     def do_DELETE(self):
         self.handle_request_with_body()
-
 
     def write_response(self, content):
         self.send_response(200)
