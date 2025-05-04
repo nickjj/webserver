@@ -78,7 +78,7 @@ Accept: */*
 ```
 
 ```sh
-# Send a POST request with inline JSON data.
+# Send a POST request with inline JSON data. You can use PUT, PATCH and DELETE too.
 curl localhost:8008/ \
   -H "Content-Type: application/json" \
   -X POST --data '{"foo":"bar"}'
