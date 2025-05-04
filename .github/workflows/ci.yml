@@ -17,6 +17,6 @@ jobs:
 
       - name: "Lint extension"
         run: |
-          pip install black flake8
-          black webserver
-          flake8 webserver
+          pip install ruff
+          ruff check webserver
+          ruff format --diff webserver
