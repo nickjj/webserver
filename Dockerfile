@@ -1,4 +1,4 @@
-FROM python:3.12.5-slim-bookworm
+FROM python:3.13.3-slim-bookworm
 LABEL maintainer="Nick Janetakis <nick.janetakis@gmail.com>"
 
 WORKDIR /app
@@ -15,9 +15,9 @@ RUN  rm -rf /var/lib/apt/lists/* /usr/share/doc /usr/share/man \
 USER python
 
 ENV PYTHONUNBUFFERED="true" \
-    PYTHONPATH="." \
-    PATH="${PATH}:/home/python/.local/bin" \
-    USER="python"
+  PYTHONPATH="." \
+  PATH="${PATH}:/home/python/.local/bin" \
+  USER="python"
 
 COPY --chown=python:python webserver /usr/local/bin
 
