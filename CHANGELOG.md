@@ -1,5 +1,13 @@
 # Changelog
 
+## v0.4.0
+
+*Released: May 4th 2025*
+
+- Add support for `HEAD`, `PUT`, `PATCH` and `DELETE`
+- Update base image to use Python 3.13.3
+- Replace black and flake8 with ruff
+
 ## v0.3.7
 
 *Released: August 8th 2024*

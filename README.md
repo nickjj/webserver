@@ -31,7 +31,7 @@ and place it somewhere on your system path.
 
 ```sh
 sudo curl \
-  -L https://raw.githubusercontent.com/nickjj/webserver/v0.3.7/webserver \
+  -L https://raw.githubusercontent.com/nickjj/webserver/v0.4.0/webserver \
   -o /usr/local/bin/webserver && sudo chmod +x /usr/local/bin/webserver
 ```
 
@@ -45,7 +45,7 @@ This could be useful if you want this process to run on the same network as
 your other Docker containers.
 
 ```sh
-docker container run -it -p 127.0.0.1:8008:8008 nickjj/webserver:v0.3.7
+docker container run -it -p 127.0.0.1:8008:8008 nickjj/webserver:v0.4.0
 ```
 
 If you go this route, you can run the above command instead of `webserver` when
@@ -165,7 +165,7 @@ services:
     # ...
 
   webserver:
-    image: "nickjj/webserver:v0.3.7"
+    image: "nickjj/webserver:v0.4.0"
 ```
 
 From within your `myapp` container you'll be able to connect to
