@@ -1,5 +1,12 @@
 # Changelog
 
+## v0.4.1
+
+*Released: October 4th 2025*
+
+- Update base image to use Python 3.13.7
+- Update base image to use Debian Trixie
+
 ## v0.4.0
 
 *Released: May 4th 2025*
