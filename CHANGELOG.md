@@ -1,5 +1,12 @@
 # Changelog
 
+## v0.4.2
+
+*Released: March 28th 2026*
+
+- Add `-v|--version|version` to get the current version
+- Update base image to use Python 3.14.3
+
 ## v0.4.1
 
 *Released: October 4th 2025*

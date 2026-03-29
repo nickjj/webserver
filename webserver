@@ -47,7 +47,7 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
 
 if len(sys.argv) > 1:
     if sys.argv[1] in ("-v", "--version", "version"):
-        print("0.4.1")
+        print("0.4.2")
         sys.exit()
 
     arg = sys.argv[1].split(":")
