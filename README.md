@@ -1,7 +1,5 @@
 # webserver
 
-![CI](https://github.com/nickjj/webserver/actions/workflows/ci.yml/badge.svg?branch=master)
-
 A zero dependency Python 3 web server to echo back an HTTP request's headers
 and data.
 
