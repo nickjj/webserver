@@ -4,8 +4,8 @@
 # Usage: ./webserver
 #        ./webserver 0.0.0.0:5000
 
+import sys
 from http.server import BaseHTTPRequestHandler, HTTPServer
-from sys import argv
 
 BIND_HOST = "localhost"
 PORT = 8008
@@ -45,8 +45,12 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
         print(content.decode("utf-8"))
 
 
-if len(argv) > 1:
-    arg = argv[1].split(":")
+if len(sys.argv) > 1:
+    if sys.argv[1] in ("-v", "--version", "version"):
+        print("0.4.1")
+        sys.exit()
+
+    arg = sys.argv[1].split(":")
     BIND_HOST = arg[0]
     PORT = int(arg[1])
 
