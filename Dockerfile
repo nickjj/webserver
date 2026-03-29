@@ -1,4 +1,4 @@
-FROM python:3.13.7-slim-trixie
+FROM python:3.14.3-slim-trixie
 LABEL maintainer="Nick Janetakis <nick.janetakis@gmail.com>"
 
 WORKDIR /app
