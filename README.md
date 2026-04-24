@@ -22,6 +22,9 @@ here we are.
 
 ## Installation
 
+*If you're using [my dotfiles](https://github.com/nickjj/dotfiles), it comes
+pre-installed by default!*
+
 All you have to do is download the `webserver` script, make sure it's executable
 and place it somewhere on your system path.
 
